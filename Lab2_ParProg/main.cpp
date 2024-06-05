@@ -65,7 +65,7 @@ std::vector<std::vector<int>> MatrixMultiplication(const std::string& file1, con
 
 std::chrono::duration<double> test2(size_t size);
 void test(size_t start, size_t end, size_t step) {
-	std::ofstream file("test.txt");
+	std::ofstream file("test3.txt");
 	std::vector<double> times;
 	for (size_t i = start; i <= end; i += step) {
 		for (size_t j = 0; j < 10; ++j) {
