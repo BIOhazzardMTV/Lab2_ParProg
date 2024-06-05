@@ -64,8 +64,9 @@ std::vector<std::vector<int>> MatrixMultiplication(const std::string& file1, con
 }
 
 std::chrono::duration<double> test2(size_t size);
+
 void test(size_t start, size_t end, size_t step) {
-	std::ofstream file("test.txt");
+	std::ofstream file("test4.txt");
 	std::vector<double> times;
 	for (size_t i = start; i <= end; i += step) {
 		for (size_t j = 0; j < 10; ++j) {
@@ -95,10 +96,9 @@ std::chrono::duration<double> test2(size_t size) {
 
 int main() {
 	try {
-		const int r = 100;
-		const int c = 100;
-		std::vector<std::vector<int>> matrix1 = CreateMatrix(r);
-		std::vector<std::vector<int>> matrix2 = CreateMatrix(r);
+		const int size = 100;
+		std::vector<std::vector<int>> matrix1 = CreateMatrix(size);
+		std::vector<std::vector<int>> matrix2 = CreateMatrix(size);
 
 		WriteMatrix(matrix1, "matrix1.txt");
 		WriteMatrix(matrix2, "matrix2.txt");
@@ -111,7 +111,7 @@ int main() {
 
 		std::chrono::duration<double> duration = end - start;
 		double meanTime = duration.count();
-		std::cout << "The scope of the task: " << 2*r*c << " elements." << std::endl;
+		std::cout << "The scope of the task: " << 2*size*size << " elements." << std::endl;
 		std::cout << "Execution time: " << meanTime << " seconds." << std::endl;
 
 		test(5, 50, 5);
